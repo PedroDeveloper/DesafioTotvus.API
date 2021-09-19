@@ -1,0 +1,21 @@
+CREATE TABLE [dbo].[Users](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[Nome] [varchar](150) NOT NULL,
+	[Email] [varchar](100) NULL,
+	[Senha] [varchar](50) NOT NULL,
+	[Perfil] [int] NOT NULL,
+	[Created] [datetime] NOT NULL,
+	[Modified] [datetime] NULL,
+	[Last_login] [datetime] NULL,
+ CONSTRAINT [Pk_Users] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+UNIQUE NONCLUSTERED 
+(
+	[Email] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+--DROP TABLE Users
